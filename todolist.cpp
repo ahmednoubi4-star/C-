@@ -75,6 +75,9 @@ int main() {
                     system("cls");
                     x = false;
                 }
+                else if(temp == ""){
+                    
+                }
                 else
                     tasks.push_back(task);
                 g.push_back(false);
