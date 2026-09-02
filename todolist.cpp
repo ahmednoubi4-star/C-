@@ -78,9 +78,11 @@ int main() {
                 else if(temp == ""){
                     
                 }
-                else
+                else{
                     tasks.push_back(task);
-                g.push_back(false);
+                    g.push_back(false);
+                }
+                    
             }
             save_to_file(tasks, g);
             break;
