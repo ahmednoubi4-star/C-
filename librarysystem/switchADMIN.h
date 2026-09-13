@@ -38,7 +38,7 @@ inline void switchADMIN(){
             string name ;
             cout<<"ENTER member's name : ";
             cin>>name;
-            int id = makeid();
+            int id=makeid();
             savetofilemembers(name , id);
             clearScreen();
             cout<<"member added"<<endl;

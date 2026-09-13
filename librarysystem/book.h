@@ -246,7 +246,7 @@ inline int makebookid(){
     return max+1 ;  
 }
 inline void savetofilebooks(int id , string name , string author){
-    ofstream bookfile ("C:\\Users\\Ahmed\\Documents\\books.txt.txt");
+    ofstream bookfile ("C:\\Users\\Ahmed\\Documents\\books.txt.txt",ios ::app);
     book b8 ( id , name , author);
     append(b8);
     bookfile<<name<<';'<<id<<';'<<author<<';'<<b8.isavalaible()<<';'<<endl;
@@ -264,7 +264,7 @@ inline void savebooks(){
     else{
         while(newnode != NULL){
             bookfile<<newnode->book1.getbookname()<<';'<<newnode->book1.getid()<<';'
-                    <<newnode->book1.authorname()<<';'<<newnode->book1.isavalaible()<<';';
+                    <<newnode->book1.authorname()<<';'<<newnode->book1.isavalaible()<<';'<<endl;
                     newnode = newnode->next;
         }
         bookfile.close();

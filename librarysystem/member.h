@@ -29,7 +29,7 @@ class member {
             cout<<getmembername()<<"'s borrowed books :"<<endl;
             if(borrowedbooks.empty()){
                 cout<<"U  don't have borrowed books !"<<endl;
-                return;
+                return ;
             }
             else{
                 for( int i = 0 ; i < borrowedbooks.size() ; i++){
@@ -146,8 +146,8 @@ inline void displayallavalaiblebooks(){
     }
     for (int i = 0; i < avalabalebooks.size()  ;)
     {
-        cout<<"book name : "<<avalabalebooks[i].getbookname() <<" => "<<"book ID : "<<avalabalebooks[i].getid()<<endl;
-        cout<<"book author : "<<avalabalebooks[i].authorname()<<endl;
+        cout<<"book name : "<<avalabalebooks[i].getbookname() <<" => "<<"book ID : "<<avalabalebooks[i].getid()<<" => "
+        <<"book author : "<<avalabalebooks[i].authorname()<<endl;
         i++;
     }
 }
@@ -208,8 +208,12 @@ inline void returnmemberbook(string name){
     }
     if(newnode == NULL){
         cout<<"no member has this name "<<endl;
+        return;
     }
         newnode->data.displayborrowedlist();
+        if(newnode->data.borrowedbooks.empty()){
+            return;
+        }
         string borrowedbook;
         cout<<"Enter the name of book to return it :"<<endl;
         cin>>borrowedbook;
@@ -246,6 +250,8 @@ inline void loadfromfilemember(){
 inline void savetofilemembers(string name , int id){
     ofstream allmembers("C:\\Users\\Ahmed\\Documents\\members.txt.txt", ios::app);
     allmembers <<name<<';'<<id<<';'<<endl;
+    member m1(id , name);
+    appendmember(m1);
     allmembers.close();
 
 }
