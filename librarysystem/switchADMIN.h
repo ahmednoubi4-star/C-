@@ -1,10 +1,10 @@
 #include "member.h"
 #include <cstdlib>
 inline void switchADMIN(){
-    loadallborrowedbooks();
     loadfromfilemember();
     loadfromfilebooks();
     loadfravalaible();
+    loadallborrowedbooks();
     int n ;
     bool p = true;
     while(p){
@@ -105,8 +105,7 @@ inline void switchADMIN(){
             cout<<"ENTER member's name : ";
             cin>>name;
             searchmemberbyname(name);
-            cout<<"--------------"<<endl
-            <<"press Y to go back to the list"<<endl;
+            cout<<"press Y to go back to the list"<<endl;
             char y = ' ';
             while ( y != 'y' && y != 'Y')
             {

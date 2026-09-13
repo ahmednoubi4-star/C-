@@ -1,8 +1,8 @@
 #include "member.h"
 inline void memberswitch(){
-    loadfravalaible();
     loadfromfilemember();
     loadfromfilebooks();
+    loadfravalaible();
     loadallborrowedbooks();
     int n ;
     bool p = true ;
