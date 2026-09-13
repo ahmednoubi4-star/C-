@@ -1,6 +1,7 @@
 #include "member.h"
 #include <cstdlib>
 inline void switchADMIN(){
+    loadallborrowedbooks();
     loadfromfilemember();
     loadfromfilebooks();
     loadfravalaible();
