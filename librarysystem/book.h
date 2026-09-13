@@ -77,6 +77,7 @@ inline void searchbyvalue(string name){
             cout <<"book name : "<< newnode->book1.getbookname() << endl 
             <<"book ID : "<<newnode->book1.getid()<<endl;
             cout<<"book author : "<<newnode->book1.authorname()<<endl;
+
             cout<<"book status : "<< newnode->book1.isavalaible()<<endl;
             cout<<"-----------------------"<<endl;
 }
@@ -105,7 +106,6 @@ inline void searchbyvalue(string name){
            cout <<"book name : "<< temp->book1.getbookname() << endl 
            <<"book ID : "<<temp->book1.getid()<<endl;
            cout<<"book author : "<<temp->book1.authorname()<<endl;
-           cout<<"book status : "<< temp->book1.isavalaible()<<endl;
            cout<<"-----------------------"<<endl;
             temp = temp->next ;
         }
@@ -214,14 +214,22 @@ inline void loadfromfilebooks () {
             if(line.empty()){
                 continue;
             }
-            string name , nameauthor , ID ;
+            string name , nameauthor , ID , avalaible;
             int id ;
+            bool k ;
             stringstream temp (line);
             getline(temp , name , ';');
             getline(temp , ID , ';');
             id = stoi(ID);
             getline(temp , nameauthor , ';');
-            book b0 ( id , name , nameauthor);
+            getline(temp , avalaible , ';');
+            if(avalaible == "YES, it's avaliable"){
+                k = true ;
+            }
+            else {
+                k = false;
+            }
+            book b0 ( id , name , nameauthor, k );
             append(b0);
         }
         bookfile.close();
@@ -238,12 +246,28 @@ inline int makebookid(){
     return max+1 ;  
 }
 inline void savetofilebooks(int id , string name , string author){
-    ofstream bookfile ("C:\\Users\\Ahmed\\Documents\\books.txt.txt",ios::app);
-    bookfile<<name<<';'<<id<<';'<<author<<';'<<endl;
+    ofstream bookfile ("C:\\Users\\Ahmed\\Documents\\books.txt.txt");
     book b8 ( id , name , author);
     append(b8);
+    bookfile<<name<<';'<<id<<';'<<author<<';'<<b8.isavalaible()<<';'<<endl;
     bookfile.close();
 }
-void clearScreen() {
+ inline void clearScreen() {
     cout << "\033[2J\033[1;1H";
+}
+inline void savebooks(){
+    ofstream bookfile ("C:\\Users\\Ahmed\\Documents\\books.txt.txt");
+    node* newnode = head;
+    if(head == NULL){
+        cout<<"there is no books right now"<<endl;
+    }
+    else{
+        while(newnode != NULL){
+            bookfile<<newnode->book1.getbookname()<<';'<<newnode->book1.getid()<<';'
+                    <<newnode->book1.authorname()<<';'<<newnode->book1.isavalaible()<<';';
+                    newnode = newnode->next;
+        }
+        bookfile.close();
+    }
+    
 }

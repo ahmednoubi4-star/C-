@@ -142,6 +142,7 @@ inline void loadfravalaible(){
 inline void displayallavalaiblebooks(){
     if(avalabalebooks.empty()){
         cout<<" no available books"<<endl;
+        return;
     }
     for (int i = 0; i < avalabalebooks.size()  ;)
     {
@@ -171,7 +172,6 @@ inline void addborrowed(string name){
         auto o =avalabalebooks.end();
         makeborrow(bookname);
         while(avalabalebooks[i].getbookname() != bookname ){
-            
             if(i == avalabalebooks.size() ){
                 cout<<"pleas enter the name correctly !"<<endl;
                 cin>>bookname;
@@ -190,6 +190,11 @@ inline void addborrowed(string name){
          o->setavailable(false);
          avalabalebooks.erase(o);
         }
+        node* node1 = head ;
+            if(node1->book1.getbookname() != bookname){
+                node1 = node1->next;
+            }
+            node1->book1.isavalaible() = "NO, it's not avaliable";
         }
     }
 inline void returnmemberbook(string name){

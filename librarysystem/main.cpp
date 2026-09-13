@@ -13,6 +13,7 @@ int main() {
   string password , key = "1n3zf98^67zS-K7";
    cout<<" 1 => ADMIN "<<endl
       <<" 2 => MEMBER "<<endl
+      <<" 3 => quit "<<endl
       <<"Enter the number : ";
       cin>>n;
       switch(n){
@@ -24,7 +25,7 @@ int main() {
               cout<<"Enter ADMIN Password : ( 0 to quit)"<<endl;
               cin>>password;
               if(password == "0"){
-                return n = 0 ;
+                return n = 3 ;
               }
             }
             clearScreen();
@@ -36,7 +37,15 @@ int main() {
             memberswitch();
             break;
           }
+          case 3 :
+          {
+            return 0;
+          }
           default:
+            while(n < 1 || n > 3){  
+              cout<<"pleas enter right number :";
+              cin>>n;
+              }
             break;
       }
 }

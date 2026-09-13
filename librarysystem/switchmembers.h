@@ -23,6 +23,7 @@ inline void memberswitch(){
                 addborrowed(name);
                 avalaiblebooks(avalabalebooks);
                 savemembrsbooks();
+                savebooks();
                 cout<<"--------------"<<endl
                 <<"press Y to go back to the list"<<endl;
                 char y = ' ';
@@ -41,6 +42,7 @@ inline void memberswitch(){
                 returnmemberbook(name);
                 savemembrsbooks();
                 avalaiblebooks(avalabalebooks);
+                savebooks();
                 cout<<"--------------"<<endl
                 <<"press Y to go back to the list"<<endl;
                 char y = ' ';
