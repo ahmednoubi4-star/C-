@@ -6,7 +6,6 @@
 #include "member.h"
 #include "switchADMIN.h"
 #include "switchmembers.h"
-#include <nlohmann/json.hpp>
 // ADMIN password :1n3zf98^67zS-K7
 using namespace std;
 int main() {
@@ -25,7 +24,7 @@ int main() {
               cout<<"Enter ADMIN Password : ( 0 to quit)"<<endl;
               cin>>password;
               if(password == "0"){
-                return n=0 ;
+                return n = 0 ;
               }
             }
             clearScreen();
