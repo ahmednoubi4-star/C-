@@ -194,7 +194,7 @@ inline void addborrowed(string name){
             if(node1->book1.getbookname() != bookname){
                 node1 = node1->next;
             }
-            node1->book1.isavalaible() = "NO, it's not avaliable";
+            node1->book1.setavailable(false);
         }
     }
 inline void returnmemberbook(string name){

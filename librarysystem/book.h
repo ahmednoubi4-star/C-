@@ -260,6 +260,7 @@ inline void savebooks(){
     node* newnode = head;
     if(head == NULL){
         cout<<"there is no books right now"<<endl;
+        return;
     }
     else{
         while(newnode != NULL){

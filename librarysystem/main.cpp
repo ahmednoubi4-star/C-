@@ -9,14 +9,19 @@
 // ADMIN password :1n3zf98^67zS-K7
 using namespace std;
 int main() {
-  int n ;
+  string n ;
   string password , key = "1n3zf98^67zS-K7";
    cout<<" 1 => ADMIN "<<endl
       <<" 2 => MEMBER "<<endl
       <<" 3 => quit "<<endl
       <<"Enter the number : ";
       cin>>n;
-      switch(n){
+      while ( n != "1" && n != "2" && n != "3"){
+            cout<<"pleas enter right number : ";
+            cin>>n;        
+      }
+      int h = stoi(n);
+      switch(h){
           case 1 :{
             cout<<"Enter ADMIN Password : ";
             cin>>password;
@@ -25,7 +30,7 @@ int main() {
               cout<<"Enter ADMIN Password : ( 0 to quit)"<<endl;
               cin>>password;
               if(password == "0"){
-                return n = 3 ;
+                return h = 3 ;
               }
             }
             clearScreen();
@@ -42,10 +47,6 @@ int main() {
             return 0;
           }
           default:
-            while(n < 1 || n > 3){  
-              cout<<"pleas enter right number :";
-              cin>>n;
-              }
             break;
       }
 }

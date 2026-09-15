@@ -4,7 +4,7 @@ inline void memberswitch(){
     loadfromfilebooks();
     loadfravalaible();
     loadallborrowedbooks();
-    int n ;
+    string n ;
     bool p = true ;
     while (p){
         cout<<"1 =>  BORROW BOOK "<<endl
@@ -13,7 +13,12 @@ inline void memberswitch(){
             <<"4 => to quit "<<endl;
             cout<<"Enter number : ";
             cin>>n;
-        switch (n)
+            while ( n != "1" && n != "2" && n != "3" && n!= "4" ){
+            cout<<"pleas enter right number : ";
+            cin>>n;        
+             }
+        int h = stoi(n);
+        switch (h)
         {
         case 1 :{
                 clearScreen();
@@ -26,8 +31,8 @@ inline void memberswitch(){
                 savebooks();
                 cout<<"--------------"<<endl
                 <<"press Y to go back to the list"<<endl;
-                char y = ' ';
-                while ( y != 'y' && y != 'Y')
+                string y = " ";
+                while ( y != "y" && y != "Y" )
                 {
                     cout<<"pleas press Y : ";
                     cin>>y;
@@ -45,8 +50,8 @@ inline void memberswitch(){
                 savebooks();
                 cout<<"--------------"<<endl
                 <<"press Y to go back to the list"<<endl;
-                char y = ' ';
-                while ( y != 'y' && y != 'Y')
+                string y = " ";
+                while ( y != "y" && y != "Y" )
                 {
                     cout<<"pleas press Y : ";
                     cin>>y;
@@ -60,8 +65,8 @@ inline void memberswitch(){
                 cin>>name;
                 searchmemberbyname(name);
                 cout<<"press Y to go back to the list"<<endl;
-                char y = ' ';
-                while ( y != 'y' && y != 'Y')
+                string y = " ";
+                while ( y != "y" && y != "Y" )
                 {
                     cout<<"pleas press Y : ";
                     cin>>y;
@@ -70,10 +75,6 @@ inline void memberswitch(){
             }
         case 4 : { return ;}
         default:
-                while(n < 1 || n > 4){  
-            cout<<"pleas enter right number :";
-            cin>>n;
-            }
         break;
         }
     }
