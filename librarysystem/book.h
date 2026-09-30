@@ -132,14 +132,14 @@ inline void searchbyvalue(string name){
             cout<<"-----------------------"<<endl;
             if(newnode->book1.isavalaible() == "YES, it's avaliable"){
                 
-                char Confirmation ;
+                string Confirmation ;
                 cout<<" U can borrow it !      "<<"Confirmation of book borrowing (Y/N)"<<endl;
                 cin>>Confirmation;
-                while( Confirmation != 'Y' && Confirmation != 'y' && Confirmation != 'N' && Confirmation != 'n'){
+                while( Confirmation != "Y" && Confirmation != "y" && Confirmation != "N" && Confirmation != "n"){
                     cout<<"pleas enter (Y/N)"<<endl;
                     cin>>Confirmation;
                 }
-                if(Confirmation == 'Y' ||  Confirmation == 'y'){
+                if(Confirmation == "Y" ||  Confirmation == "y"){
                      b = true ;
                     cout<<"congratulations u have borrowed the book "<<endl
                     <<"don't forget to return it in 14 days    ";
@@ -151,7 +151,7 @@ inline void searchbyvalue(string name){
                         cin>>f;}
                     while(f != 'Y' &&  f !=  'y');
                 }
-                else if( Confirmation == 'N' || Confirmation ==  'n'){
+                else if( Confirmation == "N" || Confirmation ==  "n"){
                     b = false ;
                     cout<<"as u like"<<endl;
                     return;
@@ -160,11 +160,11 @@ inline void searchbyvalue(string name){
             else{
                 b = false ;
                 cout<<"sorry this book doesn't exist right now"<<endl;
-                char t;
+                string t;
                 do {
                     cout<<"enter (Y) to get out   "<<endl;
                     cin>>t;}
-                    while(t != 'Y' &&  t !=  'y');
+                    while(t != "Y" &&  t !=  "y");
             }     
     }
 }
