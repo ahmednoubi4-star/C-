@@ -187,12 +187,12 @@ inline void searchbyvalue(string name){
            <<"book ID : "<<newnode->book1.getid()<<endl;
            cout<<"book author : "<<newnode->book1.authorname()<<endl;
             cout<<"-----------------------"<<endl;
-            char y ;
+            string y = " ";
             do{
                 cout<<"DO yo want to return "<<x <<" book ?  (Y/N)"<<endl;
                 cin>>y;
-            }while(y != 'Y' && y != 'y' && y != 'N' && y != 'n');
-            if( y == 'Y' || y =='y'){
+            }while(y != "Y" && y != "y" && y != "N" && y != "n");
+            if( y == "Y" || y =="y"){
                  b = true ;
                 cout<<"thank u for coming here "<<endl;
                 newnode->book1.setavailable(true);
